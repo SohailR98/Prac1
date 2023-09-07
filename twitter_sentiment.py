@@ -7,10 +7,10 @@ from textblob import TextBlob
 class TwitterClient(object):
 
     def __init__(self):
-        consumer_key = ''
-        consumer_secret = ''
-        access_token = ''
-        access_token_secret = ''
+        consumer_key = 'figJcwD06VX01heR8eJue92qP'
+        consumer_secret = '2soAq5yYWGQ1Im2Ms7sW4vJn9vexfauHlDjpTq517h0NYcWt1C'
+        access_token = '1459936499722592266-3QTcEKG2ki9RDPFfgpHlubOALWa1za'
+        access_token_secret = 'pJATJZ3hr15SeoaDEdI5kLxKQWrvoSNYAmeRVmJJf5uIx'
 
         try:
             self.auth = OAuthHandler(consumer_key, consumer_secret)
@@ -39,7 +39,8 @@ class TwitterClient(object):
         tweets = []
 
         try:
-            fetched_tweets = self.api.search_tweets(q=query, count=count)
+            fetched_tweets = self.api.search_tweets(
+                q=query, count=count)
 
             for tweet in fetched_tweets:
                 parsed_tweet = {}
