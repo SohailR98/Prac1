@@ -64,7 +64,7 @@ class TwitterClient(object):
 
 def main():
     api = TwitterClient()
-    tweets = api.get_tweets(query='Donald', count=25)
+    tweets = api.get_tweets(query='uae', count=25)
 
     ptweets = [tweet for tweet in tweets if tweet['sentiment'] == 'positive']
     print("Positive tweets percentage: {} %".format(

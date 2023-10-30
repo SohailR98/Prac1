@@ -1,0 +1,171 @@
+<!-- FILEPATH: /c:/Users/User/Desktop/all/Git-tut/WebApp/templates/index.html -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Product Quote</title>
+  </head>
+  <body>
+    <h1>Product Quote</h1>
+    <form action="/quote" method="POST">
+      <label for="client_name">Client Name:</label>
+      <input type="text" id="client_name" name="client_name" /><br /><br />
+      <label for="client_phone">Client Phone:</label>
+      <input type="text" id="client_phone" name="client_phone" /><br /><br />
+      <label for="site_location">Site Location:</label>
+      <input type="text" id="site_location" name="site_location" /><br /><br />
+      <input type="submit" value="Get Quote" />
+    </form>
+    <button onclick="addRoom()">Add Room</button>
+    <script>
+      function addRoom() {
+        var roomForm = document.createElement('form');
+        roomForm.setAttribute('id', 'room_form');
+        roomForm.setAttribute('name', 'room_form');
+
+        var roomNameLabel = document.createElement('label');
+        roomNameLabel.setAttribute('for', 'room_name');
+        roomNameLabel.innerHTML = 'Room Name:';
+
+        var roomNameInput = document.createElement('input');
+        roomNameInput.setAttribute('type', 'text');
+        roomNameInput.setAttribute('id', 'room_name');
+        roomNameInput.setAttribute('name', 'room_name');
+        roomForm.appendChild(roomNameLabel);
+        roomForm.appendChild(roomNameInput);
+
+        var addButton = document.createElement('button');
+        addButton.setAttribute('type', 'button');
+        addButton.innerHTML = 'Add Room';
+        addButton.addEventListener('click', function () {
+          var table = document.createElement('table');
+          table.setAttribute('id', 'room_table');
+
+          var thead = document.createElement('thead');
+          var tr = document.createElement('tr');
+
+          var deviceNameTh = document.createElement('th');
+          deviceNameTh.innerHTML = 'Device Name';
+          tr.appendChild(deviceNameTh);
+
+          var quantityTh = document.createElement('th');
+          quantityTh.innerHTML = 'Quantity';
+          tr.appendChild(quantityTh);
+
+          var noteTh = document.createElement('th');
+          noteTh.innerHTML = 'Note';
+          tr.appendChild(noteTh);
+
+          thead.appendChild(tr);
+          table.appendChild(thead);
+
+          var tbody = document.createElement('tbody');
+
+          for (var i = 0; i < 10; i++) {
+            var tr = document.createElement('tr');
+
+            var deviceNameTd = document.createElement('td');
+            var deviceNameInput = document.createElement('input');
+            deviceNameInput.setAttribute('type', 'text');
+            deviceNameInput.setAttribute('name', 'device_name[]');
+            deviceNameTd.appendChild(deviceNameInput);
+            tr.appendChild(deviceNameTd);
+
+            var quantityTd = document.createElement('td');
+            var quantityInput = document.createElement('input');
+            quantityInput.setAttribute('type', 'number');
+            quantityInput.setAttribute('name', 'quantity[]');
+            quantityTd.appendChild(quantityInput);
+            tr.appendChild(quantityTd);
+
+            var noteTd = document.createElement('td');
+            var noteInput = document.createElement('input');
+            noteInput.setAttribute('type', 'text');
+            noteInput.setAttribute('name', 'note[]');
+            noteTd.appendChild(noteInput);
+            tr.appendChild(noteTd);
+
+            tbody.appendChild(tr);
+          }
+
+          table.appendChild(tbody);
+          roomForm.appendChild(table);
+        });
+
+        roomForm.appendChild(roomNameLabel);
+
+        var roomNameInput = document.createElement('input');
+        roomNameInput.setAttribute('type', 'text');
+        roomNameInput.setAttribute('id', 'room_name');
+        roomNameInput.setAttribute('name', 'room_name');
+        roomForm.appendChild(roomNameInput);
+
+        var addButton = document.createElement('button');
+        addButton.setAttribute('type', 'button');
+        addButton.innerHTML = 'Add Room';
+        addButton.addEventListener('click', function () {
+          var table = document.createElement('table');
+          table.setAttribute('id', 'room_table');
+
+          var thead = document.createElement('thead');
+          var tr = document.createElement('tr');
+
+          var deviceNameTh = document.createElement('th');
+          deviceNameTh.innerHTML = 'Device Name';
+          tr.appendChild(deviceNameTh);
+
+          var quantityTh = document.createElement('th');
+          quantityTh.innerHTML = 'Quantity';
+          tr.appendChild(quantityTh);
+
+          var noteTh = document.createElement('th');
+          noteTh.innerHTML = 'Note';
+          tr.appendChild(noteTh);
+
+          thead.appendChild(tr);
+          table.appendChild(thead);
+
+          var tbody = document.createElement('tbody');
+
+          for (var i = 0; i < 10; i++) {
+            var tr = document.createElement('tr');
+
+            var deviceNameTd = document.createElement('td');
+            var deviceNameInput = document.createElement('input');
+            deviceNameInput.setAttribute('type', 'text');
+            deviceNameInput.setAttribute('name', 'device_name[]');
+            deviceNameTd.appendChild(deviceNameInput);
+            tr.appendChild(deviceNameTd);
+
+            var quantityTd = document.createElement('td');
+            var quantityInput = document.createElement('input');
+            quantityInput.setAttribute('type', 'number');
+            quantityInput.setAttribute('name', 'quantity[]');
+            quantityTd.appendChild(quantityInput);
+            tr.appendChild(quantityTd);
+
+            var noteTd = document.createElement('td');
+            var noteInput = document.createElement('input');
+            noteInput.setAttribute('type', 'text');
+            noteInput.setAttribute('name', 'note[]');
+            noteTd.appendChild(noteInput);
+            tr.appendChild(noteTd);
+
+            tbody.appendChild(tr);
+          }
+
+          table.appendChild(tbody);
+          roomForm.appendChild(table);
+        });
+
+        roomForm.appendChild(addButton);
+
+        var submitButton = document.createElement('button');
+        submitButton.setAttribute('type', 'submit');
+        submitButton.innerHTML = 'Close Room';
+        roomForm.appendChild(submitButton);
+
+        document.body.appendChild(roomForm);
+      }
+    </script>
+  </body>
+</html>
