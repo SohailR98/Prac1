@@ -58,10 +58,25 @@
 
 # calculate the average temperature for each day of week and print result:
 
-Temperatures = {(28, 38), (23, 35), (24, 32), (21, 30),
-                (24, 30), (25, 38), (20, 30)}
+# Temperatures = {(28, 38), (23, 35), (24, 32), (21, 30),
+#                 (24, 30), (25, 38), (20, 30)}
 
 
-for index, temprature in enumerate(Temperatures, start=1):
-    aveg = (temprature[0] + temprature[1])/2
-    print(f"Day {index}: Average temperature is {aveg:.2f}° C ")
+# for index, temprature in enumerate(Temperatures, start=1):
+#     aveg = (temprature[0] + temprature[1])/2
+#     print(f"Day {index}: Average temperature is {aveg:.2f}° C ")
+
+# using continue statement in nested loop
+# for i in range(2, 4):
+#     for j in range(1, 11):
+#         if i == j:
+#             continue
+#         print(i, "*", j, "=", i * j)
+
+#     print()
+
+# using list comprehension to make nested loop statement in single line
+
+# list1 = [[j for j in range(5)]for i in range(2)]
+
+# print(list1)
