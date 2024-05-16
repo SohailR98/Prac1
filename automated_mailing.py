@@ -19,7 +19,7 @@ for i in range(1):
     msg['To'] = to_addr[i]
     msg['Subject'] = 'Test Subject'
 
-    body = name[i]+'Test Body Data'
+    body = name[i]+'meddsgr ksmdjhnc'
 
     msg.attach(MIMEText(body, 'plain'))
     mail = smtplib.SMTP('smtp.gmail.com', 587)
