@@ -65,6 +65,7 @@ class Linkedlist:
         print("None")
 
 
+
 linked_list = Linkedlist()
 
 linked_list.append(1)
@@ -81,8 +82,8 @@ linked_list.push(5)
 linked_list.push(6)
 linked_list.print_list()
 
-print("deletion of 3rd element")
+print("deletion of 1st element")
 
-linked_list.deleteN(4)
+linked_list.deleteN(0)
 linked_list.print_list()
 
